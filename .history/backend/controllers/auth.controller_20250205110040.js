@@ -94,10 +94,8 @@ try{
 
 export const getMe = async(req, res) =>{
     try{
-        const user = await User.findById(req.user._id).select("-password");
-        res.status(200).json(user);
+        const user = await User.findById(req.user._id)
     }catch(error){
-        console.log("Error in getMe controller", error.message);
-        res.status(500).json({error:"Internal server error"});
+        
     }
 }
